@@ -1,0 +1,6 @@
+<div class="clear" [class]="inputClass" (click)="showLeftDarwer()">
+  <i class="pull-left icon-user02" [class]="iconClass"></i>
+  <input class="pull-left" [placeholder]="placeholder" readonly [value]="inputValue">
+  <i class="pull-right icon-right-arrow"></i>
+</div>
+<app-left-drawer [items]="dataList" [name]="'companyName'" [selected]="'selected'" [isSelect]="'isSelect'" [showLeft]="parentShow" (parentShowLeft)="showLeftDarwer()" (selectedValue)="querySelectedVal($event)" ></app-left-drawer>

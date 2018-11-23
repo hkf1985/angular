@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SafeEduFronEnd</title>
+  <!--<base href="/">-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/iconfont/style.css" type="text/css">
+</head>
+<script>
+  (function (doc, win) {
+    var docEl = doc.documentElement,
+      resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      recalc = function () {
+        var clientWidth = docEl.clientWidth;
+        if (!clientWidth) return;
+        if (clientWidth >= 750) {
+          docEl.style.fontSize = '100px';
+        } else {
+          docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+
+        }
+      };
+
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+  })(document, window);
+
+  (function init() {
+    if (typeof(pageData) == "undefined") {
+      pageData = "";//moqui里面建议删除
+    }
+    if (typeof(rem) == "undefined") {
+      bodyWidth = document.documentElement.clientWidth;
+      bodyHeight = document.documentElement.clientHeight
+      if (bodyWidth > 750) {
+        rem = 100
+      } else {
+        rem = 100 * bodyWidth / 750
+      }
+    }
+  })();
+</script>
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

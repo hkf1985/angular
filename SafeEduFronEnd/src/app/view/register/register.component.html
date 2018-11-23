@@ -1,0 +1,12 @@
+<app-top [title]="topTitle" [back]="showBack" ></app-top>
+<div>
+  <div class="content">
+    <app-input [inputClass]="inputWrap" [iconClass]="userIcon" [placeholder]="'请输入您的用户名'" #username></app-input>
+    <app-verify-input [inputClass]="inputWrap" [iconClass]="'icon-verify'" [placeholder]="'请输入验证码'" [inputVal]="username.inputValue"  #verify></app-verify-input>
+    <app-password-input [inputClass]="inputWrap" [iconClass]="pwdIcon" [placeholder]="'请输入您的密码'" #password></app-password-input>
+    <app-choose-input [inputClass]="inputWrap" [dataList]="companyList"  [iconClass]="chooseIcon" [placeholder]="'请选择您所在的公司'" [inputValue]="selectedCompany" (click)="getCompanyList()" #company></app-choose-input>
+  </div>
+  <div style="margin-top: 200px">
+    <app-btn-gg [bgColor]="'#2889f4'" (click)="submitUserInfo(username.inputValue,verify.inputValue,password.inputValue,company.inputValue)"  [name]="'注册'" ></app-btn-gg>
+  </div>
+</div>

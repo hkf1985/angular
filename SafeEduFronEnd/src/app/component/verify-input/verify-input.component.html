@@ -1,0 +1,8 @@
+<div class="clear" [class]="'clear '+inputClass">
+  <i class="pull-left" [class]="'pull-left '+iconClass"></i>
+  <input class="pull-left" [placeholder]="placeholder" [(ngModel)]="inputValue">
+  <div class="btn-wrap pull-right">
+    <button *ngIf="sendAuthcode" (click)="getVerify()">获取验证码</button>
+    <p *ngIf="!sendAuthcode">60</p>
+  </div>
+</div>

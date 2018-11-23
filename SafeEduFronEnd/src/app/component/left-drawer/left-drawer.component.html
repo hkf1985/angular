@@ -1,0 +1,8 @@
+<div class="list" [ngClass]="{'show':showLeft}" (click)="hideLeftDrawer(showLeft)" >
+  <ul>
+    <li class="clear" *ngFor="let item of items;let i= index" [ngClass]="{'isSelect':item[isSelect]}" (click)="selectThisItem($event,item,i)">
+      <p class="pull-left">{{item[name]}}</p>
+      <i class="pull-right" [ngClass]="{'icon-define':item[selected]}" ></i>
+    </li>
+  </ul>
+</div>

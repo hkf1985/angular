@@ -1,0 +1,10 @@
+<div>
+  <app-top [title]="'登录'"></app-top>
+  <div class="content">
+    <app-input [placeholder]="'请输入您的手机号'" [iconClass]="'icon-user'" [inputClass]="'clear input-list'" #username></app-input>
+    <app-password-input [iconClass]="'icon-pwd'" [placeholder]="'请输入您的密码'" [inputClass]="'clear input-list'" #userpwd></app-password-input>
+  </div>
+  <div style="margin-top: 200px">
+    <app-btn-gg [name]="'登录'" [bgColor]="blurColor" (click)="login(username.inputValue,userpwd.inputValue)"></app-btn-gg>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div [ngStyle]="{'height':height}">
+  <app-top [title]="'新闻列表'"></app-top>
+  <div class="content">
+    <app-scroll [maxIndex]="maxIndex" [pageIndex]="pageIndex" [url]="url" (resultData)="resultData($event,appScroll.pageIndex)" #appScroll>
+      <div class="new-list clear" *ngFor="let item of newsList">
+          <div class="pull-left news-img">
+            <img [src]="item.newsMainPic">
+          </div>
+        <div class="pull-right news-info">
+          <h2>{{item.webNewsTitle}}</h2>
+          <p>{{item.newsBrief}}</p>
+          <div class="other-info clear">
+            <time class="pull-left">{{item.publishTime}}</time>
+            <a class="pull-right">详情</a>
+          </div>
+        </div>
+      </div>
+    </app-scroll>
+  </div>
+
+</div>
+

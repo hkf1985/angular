@@ -1,0 +1,15 @@
+<div  class="touch-wrap" (touchstart)="touchstartFn($event)" (touchmove)="touchmoveFn($event,scrollWrap.scrollTop)" (touchend)="touchendFn($event,scrollWrap.scrollTop)" >
+  <div class="down-load">
+    <p>{{downLoadText}}</p>
+  </div>
+  <div (scroll)="scroll($event,dataWrap.clientHeight)" class="scroll-wrap" #scrollWrap [ngStyle]="{'transform':transform,'transition':transition}">
+    <div class="data-wrap" #dataWrap>
+      <ng-content></ng-content>
+    </div>
+    <div  class="up-load">
+      <p *ngIf="upLoadMore">加载更多数据</p>
+      <p *ngIf=upLoadNot>我是有底线的~</p>
+    </div>
+  </div>
+
+</div>
