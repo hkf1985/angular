@@ -17,6 +17,8 @@ import { PasswordInputComponent } from './component/password-input/password-inpu
 import { LoginComponent } from './view/login/login.component';
 import { ScrollComponent } from './component/scroll/scroll.component';
 import { NewsListComponent } from './view/news-list/news-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService }  from './in-memory-data.service';
 @NgModule({
@@ -39,7 +41,9 @@ import { NewsListComponent } from './view/news-list/news-list.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    NgZorroAntdMobileModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/page/SafeEduFronEnd'}],
   bootstrap: [AppComponent]

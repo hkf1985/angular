@@ -1,0 +1,16 @@
+<div>
+  <Navbar [icon]="'left'" [mode]="'light'" (onLeftClick)="onLeftClick()" >注册</Navbar>
+  <div class="content">
+    <Flex class="logo-wrap">
+      <FlexItem>
+        <app-logo [logoSrc]="logoSrc" [textColor]="'#ffffff'">道路运输从业人员安全生产警示教育培训</app-logo>
+      </FlexItem>
+    </Flex>
+    <nzm-wingblank class="register-wrap">
+        <app-input-item [type]="'tel'" [iconType]="'icon-phone'" [placeholder]="'请输入您的手机号'"></app-input-item>
+      <app-verify-phone [type]="'number'" [iconType]="'icon-Safety'" [placeholder]="'请输入验证码'"></app-verify-phone>
+      <app-input-item [type]="'password'" [iconType]="'icon-lock'"  [placeholder]="'请输入您的密码'" ></app-input-item>
+        <app-input-item [type]="'tel'" [iconType]="'icon-carryout'" [placeholder]="'请输入您的从业资格证号'"></app-input-item>
+    </nzm-wingblank>
+  </div>
+</div>

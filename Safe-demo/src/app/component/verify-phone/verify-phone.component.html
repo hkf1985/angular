@@ -1,0 +1,12 @@
+<div class="clearfix" [class]="className">
+  <div *ngIf="iconType" class="pull-left icon-wrap">
+    <i  class="icon anticon" ngClass="{{iconType}}"></i>
+  </div>
+  <p *ngIf="name" class="pull-left">{{name}}</p>
+  <input [placeholder]="placeholder" class="pull-left" [type]="type" [(ngModel)]="inputValue" >
+  <div class="btn-wrap"   *ngIf="!showTime" >
+    <div Button [type]="'primary'" [inline]="true" style="margin-right: 4px" [size]="'small'" (onClick)="sendPhoneNum()">获取验证码</div>
+    <!--<nzm-button [inline]="true"  *ngIf="!showTime" [size]="'small'" [type]="'primary'" class="pull-right" (onClick)="sendPhoneNum()">获取验证码</nzm-button>-->
+  </div>
+  <p *ngIf="showTime" class="pull-right time">{{time}}</p>
+</div>
