@@ -1,0 +1,11 @@
+<div class="upload-img">
+  <div class="icon-wrap">
+    <Icon [type]="'plus'" [color]="'#666666'" [size]="'md'"></Icon>
+  </div>
+  <p>
+    {{content}}
+  </p>
+  <input *ngIf="upload" type="file" (change)="inputChange($event)" [(ngModel)]="value" >
+  <img *ngIf="imgSrc" [src]="_d.bypassSecurityTrustUrl(imgSrc)">
+  <div *ngIf="imgMask" class="img-mask"></div>
+</div>

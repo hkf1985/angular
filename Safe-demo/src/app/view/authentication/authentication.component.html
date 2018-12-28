@@ -1,3 +1,30 @@
-<p>
-  authentication works!
-</p>
+<div class="authentication"  [ngStyle]="{'width.px':width,'height.px':height}" >
+  <div class="header">
+    <Navbar [icon]="'left'" (onLeftClick)="onLeftClick()" >身份认证</Navbar>
+    <WingBlank>
+      <WingBlank>
+        <img src="../../../assets/images/top.png">
+      </WingBlank>
+    </WingBlank>
+    <app-warm-prompt>请上传真实有效的身份证件，以便快速通过审核。</app-warm-prompt>
+  </div>
+  <WingBlank>
+    <h2 class="title">请上传身份证正反面照片</h2>
+    <WhiteSpace></WhiteSpace>
+    <WhiteSpace></WhiteSpace>
+    <app-up-loading-image [content]="'请上传身份证正面照'"></app-up-loading-image>
+    <WhiteSpace></WhiteSpace>
+    <WhiteSpace></WhiteSpace>
+    <app-up-loading-image [content]="'请上传身份证反面照'"></app-up-loading-image>
+    <!--<ImagePicker [files]="files" [selectable]="files.length<1" [selectable]="true" [length]="1">请上传身份证正面</ImagePicker>-->
+  </WingBlank>
+  <WingBlank>
+    <WhiteSpace></WhiteSpace>
+    <WhiteSpace></WhiteSpace>
+    <WhiteSpace></WhiteSpace>
+    <WhiteSpace></WhiteSpace>
+    <WhiteSpace></WhiteSpace>
+    <WhiteSpace></WhiteSpace>
+    <nzm-button [size]="'large'" [loading]="load" [type]="'primary'"  (onClick)="next()">下一步</nzm-button>
+  </WingBlank>
+</div>

@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./authentication.component.less']
 })
 export class AuthenticationComponent implements OnInit {
-
+  width=document.documentElement.clientWidth;
+  height: number = document.documentElement.clientHeight;
+  files=[];
   constructor() { }
 
   ngOnInit() {
   }
-
+  onLeftClick(){
+    window.history.back()
+  }
+  next(){
+    alert("请上传身份信息")
+  }
 }

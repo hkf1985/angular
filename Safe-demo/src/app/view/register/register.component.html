@@ -1,22 +1,35 @@
 <div [ngStyle]="{'width.px':width,'height.px':height}">
-  <Navbar [icon]="'left'" [mode]="'light'" (onLeftClick)="onLeftClick()" >注册</Navbar>
+  <!--<Navbar [icon]="'left'" [mode]="'light'" (onLeftClick)="onLeftClick()" >注册</Navbar>-->
   <div class="content">
     <Flex class="logo-wrap">
       <FlexItem>
         <app-logo [logoSrc]="logoSrc" [textColor]="'#ffffff'">道路运输从业人员安全生产警示教育培训</app-logo>
       </FlexItem>
     </Flex>
-    <nzm-wingblank class="register-wrap">
-      <!--<form (submit)="onSubmit()" #userInfoForm="ngForm" [action]="formUrl">-->
+    <div class="register-wrap">
+      <nzm-wingblank class="input-list">
+        <!--<form (submit)="onSubmit()" #userInfoForm="ngForm" [action]="formUrl">-->
+        <nzm-whitespace></nzm-whitespace>
         <app-input-item [type]="'tel'" [iconType]="'icon-phone'" [iName]="'telNum'"  [placeholder]="'请输入您的手机号'" #name></app-input-item>
         <app-verify-phone [type]="'number'" [iconType]="'icon-Safety'" [name]="'certNum'" [placeholder]="'请输入验证码'" [phoneNum]="name.inputValue"  #verify ></app-verify-phone>
         <app-input-item [type]="'password'" [iconType]="'icon-lock'" [iName]="'pwd'"  [placeholder]="'请输入您的密码'" [password]="true" #password></app-input-item>
         <app-input-item [type]="'text'" [iconType]="'icon-carryout'" [iName]="'employmentCertificate'" [placeholder]="'请输入您的从业资格证号'" #certification></app-input-item>
         <app-select-input [type]="'text'" [iconType]="'icon-carryout'" [name]="'company'" [placeholder]="'请选择您所在的企业'" [inputValue]="selectedCompany" #company (onclick)="onOpenChange($event)"></app-select-input>
         <app-select-input [type]="'text'" [iconType]="'icon-carryout'" [name]="'license'" [placeholder]="'准驾车型'" #license [inputValue]="selectedLicense" (onclick)="onOpenLicense($event)"></app-select-input>
-      <!--</form>-->
-      <nzm-button [size]="'big'" [type]="'primary'" [loading]="loading" (onClick)="registerAccount(name.inputValue,verify.inputValue,password.inputValue,certification.inputValue,company.inputValue,license.inputValue)">注册</nzm-button>
-    </nzm-wingblank>
+        <!--</form>-->
+        <nzm-whitespace></nzm-whitespace>
+        <nzm-whitespace></nzm-whitespace>
+        <nzm-wingblank>
+          <nzm-button [size]="'big'" [type]="'primary'" [loading]="loading" (onClick)="registerAccount(name.inputValue,verify.inputValue,password.inputValue,certification.inputValue,company.inputValue,license.inputValue)">注册</nzm-button>
+        </nzm-wingblank>
+        <nzm-whitespace></nzm-whitespace>
+      </nzm-wingblank>
+    </div>
+    <router-outlet routerLink="login" class="login-link clear" >
+      <div class="pull-left icon-wrap">
+        <Icon [type]="'left'"></Icon>
+      </div>
+      <p class="pull-left">立即登录</p></router-outlet>
   </div>
   <app-drawer  [open]="state.open"   (onclick)="onOpenChange($event)">
     <List>

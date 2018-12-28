@@ -20,11 +20,13 @@ export class LoginComponent implements OnInit {
       username:u,
       pwd:p
     }
+    this.load=true
+    console.log(data)
     this.loginService.userLogin(data).subscribe(result=>{
       console.log(result)
-      this.load=true
+      this.load=false
     },error=>{
-      console.log(error)
+      console.log('error',error)
     })
 
   }

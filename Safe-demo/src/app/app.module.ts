@@ -19,6 +19,8 @@ import { DrawerComponent } from './component/drawer/drawer.component';
 import { TopPageComponent } from './component/top-page/top-page.component';
 import { AuthenticationComponent } from './view/authentication/authentication.component';
 import { LoginComponent } from './view/login/login.component';
+import { WarmPromptComponent } from './component/warm-prompt/warm-prompt.component';
+import { UpLoadingImageComponent } from './component/up-loading-image/up-loading-image.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { LoginComponent } from './view/login/login.component';
     TopPageComponent,
     AuthenticationComponent,
     LoginComponent,
+    WarmPromptComponent,
+    UpLoadingImageComponent,
   ],
   imports: [
     BrowserModule,
