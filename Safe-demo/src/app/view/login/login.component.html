@@ -1,0 +1,19 @@
+<div [ngStyle]="{'width.px':width,'height.px':height}" class="login-wrap">
+  <app-logo></app-logo>
+  <Flex>
+    <FlexItem>
+      <app-logo [logoSrc]="logoSrc" [textColor]="'#ffffff'">交通道路运输从业人员安全生产警示教育培训</app-logo>
+    </FlexItem>
+  </Flex>
+    <WingBlank [size]="'lg'">
+      <WhiteSpace [size]="'xl'"></WhiteSpace>
+      <WhiteSpace [size]="'xl'"></WhiteSpace>
+    <app-input-item [color]="1" [iconType]="'icon-user'" [placeholder]="'请输入您的手机号'" [type]="'tel'" #username></app-input-item>
+    <app-input-item [color]="1" [iconType]="'icon-lock'" [placeholder]="'请输入您的密码'" [password]="true" [type]="'password'" #pwd></app-input-item>
+      <WhiteSpace [size]="'xl'"></WhiteSpace>
+      <WhiteSpace [size]="'xl'"></WhiteSpace>
+      <nzm-button [size]="'large'" [loading]="load" (onClick)="userLogin(username.inputValue,pwd.inputValue)" class="login-btn" >登录</nzm-button>
+    </WingBlank>
+
+
+</div>

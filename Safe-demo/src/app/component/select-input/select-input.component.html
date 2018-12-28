@@ -1,0 +1,11 @@
+<div class="clearfix" [class]="className">
+  <div *ngIf="iconType" class="pull-left icon-wrap">
+    <i  class="icon anticon" ngClass="{{iconType}}"></i>
+  </div>
+  <p *ngIf="inputName" class="pull-left">{{inputName}}</p>
+  <input [placeholder]="placeholder" class="pull-left" [type]="type"  [name]="name" [(ngModel)]="inputValue" readonly >
+  <div class="pull-right icon-wrap" (click)="showOptions()" >
+    <i class="icon anticon icon-arrowright"></i>
+  </div>
+</div>
+
