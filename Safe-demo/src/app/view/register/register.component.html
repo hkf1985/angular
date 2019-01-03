@@ -31,7 +31,7 @@
       </div>
       <p class="pull-left">立即登录</p></router-outlet>
   </div>
-  <app-drawer  [open]="state.open"   (onclick)="onOpenChange($event)">
+  <app-drawer  [isOpen]="state.open"   (onclick)="onOpenChange($event)">
     <List>
       <nzm-list-item (onClick)="showCounty()">
         <Brief>县区选择</Brief>
@@ -41,7 +41,7 @@
       </nzm-list-item>
     </List>
   </app-drawer>
-  <app-drawer  [open]="licenseState.open" (onclick)="onOpenLicense($event)">
+  <app-drawer  [isOpen]="licenseState.open" (onclick)="onOpenLicense($event)">
     <List>
       <nzm-list-item *ngFor="let item of licenseList" (onClick)="chooseDriving(item)">
         <Brief>{{item.drivingVehicleName}}</Brief>

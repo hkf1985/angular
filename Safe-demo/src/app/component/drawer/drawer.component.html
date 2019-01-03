@@ -1,5 +1,5 @@
-<div class="drawer-wrap"[ngStyle]="{'width.px': width}"ngClass="{{open?'show-drawer':'hide-drawer'}}" (click)="closeDrawer()">
-  <div class="drawer" ngClass="{{open?'open-drawer':'close-drawer'}}" (click)="stop($event)">
+<div *ngIf="isOpen"  class="drawer-wrap"[ngStyle]="{'width.px': width}"(click)="closeDrawer()">
+  <div  [ngClass]="isOpen?'open-drawer':'close-drawer'"  class="drawer" (click)="stop($event)">
     <ng-content></ng-content>
   </div>
 </div>

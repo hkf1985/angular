@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostBinding } from '@angular/core';
 import {CompanyService} from "../../service/company.service";
 import { LicenseService} from "../../service/license.service";
 import { FormGroup,FormControl } from '@angular/forms';
@@ -7,7 +7,7 @@ import {RegisterService} from "../../service/register.service";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.less']
+  styleUrls: ['./register.component.less'],
 })
 export class RegisterComponent implements OnInit {
   width=document.documentElement.clientWidth;
