@@ -10,12 +10,12 @@
       <nzm-wingblank class="input-list">
         <!--<form (submit)="onSubmit()" #userInfoForm="ngForm" [action]="formUrl">-->
         <nzm-whitespace></nzm-whitespace>
-        <app-input-item [type]="'tel'" [iconType]="'icon-phone'" [iName]="'telNum'"  [placeholder]="'请输入您的手机号'" #name></app-input-item>
-        <app-verify-phone [type]="'number'" [iconType]="'icon-Safety'" [name]="'certNum'" [placeholder]="'请输入验证码'" [phoneNum]="name.inputValue"  #verify ></app-verify-phone>
-        <app-input-item [type]="'password'" [iconType]="'icon-lock'" [iName]="'pwd'"  [placeholder]="'请输入您的密码'" [password]="true" #password></app-input-item>
-        <app-input-item [type]="'text'" [iconType]="'icon-carryout'" [iName]="'employmentCertificate'" [placeholder]="'请输入您的从业资格证号'" #certification></app-input-item>
-        <app-select-input [type]="'text'" [iconType]="'icon-carryout'" [name]="'company'" [placeholder]="'请选择您所在的企业'" [inputValue]="selectedCompany" #company (onclick)="onOpenChange($event)"></app-select-input>
-        <app-select-input [type]="'text'" [iconType]="'icon-carryout'" [name]="'license'" [placeholder]="'准驾车型'" #license [inputValue]="selectedLicense" (onclick)="onOpenLicense($event)"></app-select-input>
+        <app-input-item [type]="'tel'" [iconType]="'icon-phone02'" [iName]="'telNum'"  [placeholder]="'请输入您的手机号'" #name></app-input-item>
+        <app-verify-phone [type]="'number'" [iconType]="'icon-eyes'" [name]="'certNum'" [placeholder]="'请输入验证码'" [phoneNum]="name.inputValue"  #verify ></app-verify-phone>
+        <app-input-item [type]="'password'" [iconType]="'icon-pwd02'" [iName]="'pwd'"  [placeholder]="'请输入您的密码'" [password]="true" #password></app-input-item>
+        <app-input-item [type]="'text'" [iconType]="'icon-verified'" [iName]="'employmentCertificate'" [placeholder]="'请输入您的从业资格证号'" #certification></app-input-item>
+        <app-select-input [type]="'text'" [iconType]="'icon-company'" [name]="'company'" [placeholder]="'请选择您所在的企业'" [inputValue]="selectedCompany" #company (onclick)="onOpenChange($event)"></app-select-input>
+        <app-select-input [type]="'text'" [iconType]="'icon-userDetails'" [name]="'license'" [placeholder]="'准驾车型'" #license [inputValue]="selectedLicense" (onclick)="onOpenLicense($event)"></app-select-input>
         <!--</form>-->
         <nzm-whitespace></nzm-whitespace>
         <nzm-whitespace></nzm-whitespace>

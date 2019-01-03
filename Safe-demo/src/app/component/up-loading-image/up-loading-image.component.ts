@@ -10,6 +10,8 @@ import {UploadImgService} from "../../service/upload-img.service";
 })
 export class UpLoadingImageComponent implements OnInit {
   @Input() content:string;
+  @Input() uploadImgUrl:string = './assets/images/pageLoad.png';
+  uploadImg:boolean=false;
   uploadUrl = "/apps/TransportMobile/Identify/IdcardIdentify/IdcardUpload"
   value;
   imgSrc;
@@ -28,7 +30,13 @@ export class UpLoadingImageComponent implements OnInit {
       console.log("sssssssssssssss",data)
     })
     this.imgSrc = window.URL.createObjectURL(file);
-    this.imgMask=true
+    this.imgMask=true;
+    this.uploadImg=true;
+    setTimeout(()=>{
+      this.imgMask=false;
+      this.uploadImg=false;
+    },3000)
+
  //   console.log(file)
   }
 

@@ -8,4 +8,7 @@
   <input *ngIf="upload" type="file" (change)="inputChange($event)" [(ngModel)]="value" >
   <img *ngIf="imgSrc" [src]="_d.bypassSecurityTrustUrl(imgSrc)">
   <div *ngIf="imgMask" class="img-mask"></div>
+  <div *ngIf="uploadImg" class="load-img">
+    <img [src]="uploadImgUrl">
+  </div>
 </div>

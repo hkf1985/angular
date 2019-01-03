@@ -3,6 +3,8 @@ import {CompanyService} from "../../service/company.service";
 import { LicenseService} from "../../service/license.service";
 import { FormGroup,FormControl } from '@angular/forms';
 import {RegisterService} from "../../service/register.service";
+import {  Router, ActivatedRoute, ParamMap} from "@angular/router"
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +23,13 @@ export class RegisterComponent implements OnInit {
   form:FormGroup;
   userTel:FormGroup;
 
-  constructor(private companyService:CompanyService,private licenseService:LicenseService,private registerService:RegisterService) { }
+  constructor(
+    private companyService:CompanyService,
+    private licenseService:LicenseService,
+    private registerService:RegisterService,
+    private route: ActivatedRoute,
+    private router: Router,
+  ) { }
   state = {
     open: false
   };
@@ -35,6 +43,9 @@ export class RegisterComponent implements OnInit {
     open:false
   }
   ngOnInit() {
+    this.route.params.subscribe(params=>{
+      console.log(params)
+    })
   }
   onLeftClick(){
     console.log("onleftclick")
