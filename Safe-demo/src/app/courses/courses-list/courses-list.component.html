@@ -1,0 +1,12 @@
+<Navbar>课程列表页</Navbar>
+<div class="content">
+  <div class="course-list clearfix" *ngFor="let item of courses">
+      <div class="course">
+        <h2>{{item.learningTitle}}</h2>
+        <p>{{item.learningProfile}}</p>
+        <p>{{item.learningPrice}}</p>
+        <nzm-button  [size]="'small'" [type]="'primary'" [routerLink]="'/course/'+item.transportLearningId">查看详情</nzm-button>
+      </div>
+      <div></div>
+  </div>
+</div>

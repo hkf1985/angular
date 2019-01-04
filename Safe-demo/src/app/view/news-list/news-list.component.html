@@ -1,0 +1,18 @@
+<div class="content">
+  <div class="new-list clear" *ngFor="let item of newsList">
+    <div class="pull-left news-img">
+      <img [src]="item.newsMainPic">
+    </div>
+    <div class="pull-right news-info">
+      <h2>{{item.webNewsTitle}}</h2>
+      <p>{{item.newsBrief}}</p>
+      <div class="other-info clear">
+        <time class="pull-left">{{item.publishTime}}</time>
+        <a class="pull-right" [routerLink]="'/newsDetails/'+item.webNewsId">详情</a>
+      </div>
+    </div>
+  </div>
+  <div class="btn-wrap">
+    <nzm-button [size]="'large'" [type]="'primary'" (onClick)="routeAddNews()">添加新闻信息</nzm-button>
+  </div>
+</div>

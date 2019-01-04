@@ -6,39 +6,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
-import { ButtonComponent } from './component/button/button.component';
-import { NavBarComponent } from './component/nav-bar/nav-bar.component';
+
 import { RegisterComponent } from './view/register/register.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LogoComponent } from './component/logo/logo.component';
-import { FontIconComponent } from './component/font-icon/font-icon.component';
-import { InputItemComponent } from './component/input-item/input-item.component';
-import { VerifyPhoneComponent } from './component/verify-phone/verify-phone.component';
-import { SelectInputComponent } from './component/select-input/select-input.component';
-import { DrawerComponent } from './component/drawer/drawer.component';
-import { TopPageComponent } from './component/top-page/top-page.component';
 import { AuthenticationComponent } from './view/authentication/authentication.component';
 import { LoginComponent } from './view/login/login.component';
-import { WarmPromptComponent } from './component/warm-prompt/warm-prompt.component';
-import { UpLoadingImageComponent } from './component/up-loading-image/up-loading-image.component';
+import { NewsListComponent } from './view/news-list/news-list.component';
+import { AddNewsComponent } from './view/add-news/add-news.component';
+import { PageNotFoundComponent } from './view/page-not-found/page-not-found.component';
+import { NewsDetailsComponent } from './view/news-details/news-details.component';
+import { CoursesModule } from './courses/courses.module';
+import { ComponentModule } from './component/component.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent,
-    NavBarComponent,
     RegisterComponent,
-    LogoComponent,
-    FontIconComponent,
-    InputItemComponent,
-    VerifyPhoneComponent,
-    SelectInputComponent,
-    DrawerComponent,
-    TopPageComponent,
     AuthenticationComponent,
     LoginComponent,
-    WarmPromptComponent,
-    UpLoadingImageComponent,
+    NewsListComponent,
+    AddNewsComponent,
+    PageNotFoundComponent,
+    NewsDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +36,9 @@ import { UpLoadingImageComponent } from './component/up-loading-image/up-loading
     ReactiveFormsModule,
     HttpClientModule,
     NgZorroAntdMobileModule,
-    AppRoutingModule
+    CoursesModule,
+    AppRoutingModule,
+    ComponentModule
   ],
   providers: [{provide:LocationStrategy, useClass: HashLocationStrategy},{provide: APP_BASE_HREF, useValue: '/page/SafeEduFronEnd'}],
   bootstrap: [AppComponent]
