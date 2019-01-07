@@ -7,7 +7,7 @@ import {NewsListComponent} from "./view/news-list/news-list.component";
 import {AddNewsComponent} from "./view/add-news/add-news.component";
 import {AuthGuard} from "./auth/auth.guard";
 import {PageNotFoundComponent} from "./view/page-not-found/page-not-found.component";
-import {NewsDetailsComponent} from "./view/news-details/news-details.component";
+//import {NewsDetailsComponent} from "./news/news-details/news-details.component";
 
 
 const routes: Routes = [
@@ -15,14 +15,20 @@ const routes: Routes = [
   { path: 'authentication', component:AuthenticationComponent },
   { path: 'login', component:LoginComponent },
   { path: 'newsList', component:NewsListComponent },
-  { path: 'newsDetails/:webNewsId', component:NewsDetailsComponent },
+  { path: 'newsDetails/:id',
+    loadChildren:'./news/news.module#NewsModule'
+  },
+  { path: 'courses',
+    loadChildren:'./courses/courses.module#CoursesModule',
+    canLoad:[AuthGuard]
+  },
   { path: 'addNews', component:AddNewsComponent ,canActivate:[AuthGuard]},
   { path: '',redirectTo:'login',pathMatch:'full' },
   { path: '**', component:PageNotFoundComponent},
 
 ];
 @NgModule({
-  imports: [ RouterModule.forRoot(routes,{enableTracing:true}) ],
+  imports: [ RouterModule.forRoot(routes,{enableTracing:false}) ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

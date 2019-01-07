@@ -9,7 +9,7 @@ import {LoginService} from "../../service/login.service";
 export class LoginComponent implements OnInit {
   width=document.documentElement.clientWidth;
   height: number = document.documentElement.clientHeight;
-  logoSrc:string='../../../assets/images/headerImgW.png'
+  logoSrc:string='./assets/images/headerImgW.png'
   load:boolean=false;
   constructor(private loginService:LoginService) { }
 

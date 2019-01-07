@@ -5,5 +5,9 @@ export  class Course {
   learningProfile:string
   learningPrice:string
   frontCover:string
+  requestTime:string
+  courseQuantity:number
+  totalCourseTime:number
+  otalProgress:string
   courseList:Section[]=[]
 }

@@ -6,7 +6,7 @@ import {ComponentModule} from "../component/component.module";
 import {NgZorroAntdMobileModule} from "ng-zorro-antd-mobile";
 
 const routes: Routes = [
-  {path:"courses",component:CoursesListComponent},
+  {path:"",component:CoursesListComponent},
   {path:"course/:id",component:CoursesDetailsComponent}
 ];
 

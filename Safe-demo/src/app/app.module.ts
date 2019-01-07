@@ -14,9 +14,9 @@ import { LoginComponent } from './view/login/login.component';
 import { NewsListComponent } from './view/news-list/news-list.component';
 import { AddNewsComponent } from './view/add-news/add-news.component';
 import { PageNotFoundComponent } from './view/page-not-found/page-not-found.component';
-import { NewsDetailsComponent } from './view/news-details/news-details.component';
-import { CoursesModule } from './courses/courses.module';
+//import { CoursesModule } from './courses/courses.module';
 import { ComponentModule } from './component/component.module';
+//import {NewsModule} from "./news/news.module";
 
 @NgModule({
   declarations: [
@@ -27,7 +27,6 @@ import { ComponentModule } from './component/component.module';
     NewsListComponent,
     AddNewsComponent,
     PageNotFoundComponent,
-    NewsDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,9 +35,10 @@ import { ComponentModule } from './component/component.module';
     ReactiveFormsModule,
     HttpClientModule,
     NgZorroAntdMobileModule,
-    CoursesModule,
+ //   CoursesModule（惰性加载的模块不能imports到这里面）,
     AppRoutingModule,
-    ComponentModule
+    ComponentModule,
+  //  NewsModule  （惰性加载的模块不能imports到这里面）
   ],
   providers: [{provide:LocationStrategy, useClass: HashLocationStrategy},{provide: APP_BASE_HREF, useValue: '/page/SafeEduFronEnd'}],
   bootstrap: [AppComponent]
